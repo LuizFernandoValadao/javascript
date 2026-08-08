@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: lightgray;
+        }
+
+        main {
+            width: 450px;
+            height: 150px;
+            background-color: red;
+            padding: 20px;
+            border-radius: 20px;
+            color: white;
+            text-shadow: 2px 2px 2px black;
+            margin: 30px;
+            transition: 1s;
+            border-bottom: 0px solid green;
+            box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.459);
+        }
+
+        main:hover {
+            border-bottom: 20px solid green;
+            transition: 1s;
+        }
+
+        input {
+            margin-top: 10px;
+        }
+        input#enviar {
+            background-color: rgb(129, 129, 216);
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            margin-left: 5px;
+            
+        }
+
+        input#enviar:hover {
+            background-color: rgb(166, 166, 243);
+        }
+
+        input#nacio {
+            padding: 5px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        div {
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Sistema de Nacionalidade</h1>
+        <hr>
+        <form action="" autocomplete="on">
+            <label for="nacio">Nacionalidade: </label>
+            <input type="text" name="nacio" id="nacio" placeholder="País">
+            <input id="enviar" type="button" value="Enviar" onclick="nacionalidade()">
+            <div id="res"></div>
+        </form>
+    </main>
+    
+    
+    <script>
+        function nacionalidade() {
+            var txtnac = document.querySelector('input#nacio')
+            var nacio = String(txtnac.value)
+            var res = document.querySelector('div#res')
+            if (nacio.toUpperCase() == 'BR') {
+                res.innerHTML = `Sua opção foi ${nacio}, Então você é Brasileiro!`
+            } else {
+                res.innerHTML = `Sua opção foi ${nacio}, Então você é Estrangeiro!`
+            }
+        }
+    </script>
+</body>
+</html>
