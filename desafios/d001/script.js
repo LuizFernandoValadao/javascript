@@ -26,6 +26,7 @@ function adicionar() {
             opt.value = cont
             select.appendChild(opt)
             cont++
+            document.getElementById('txtnum').value = ''
         }
         
 
@@ -33,6 +34,20 @@ function adicionar() {
 }
 
 function finalizar() {
-    let res = document.getElementById('res')
-    res.innerText = `Ao todo, temos ${list.length} números cadastrados.`
+    if (list.length == 0) {
+        alert('Adicione valores antes de finalizar!')
+    } else {
+        list.sort()
+        let res = document.getElementById('res')
+        res.innerText = `Ao todo, temos ${list.length} números cadastrados.` 
+        res.innerText += `\nO maior valor informado foi ${list[list.length-1]}`
+        res.innerText += `\nO menor valor informado foi ${list[0]}`
+        let soma = 0
+        for (let i in list) {
+            soma += list[i]
+        }
+        res.innerText += `\nSomando todos os valores, temos ${soma}`
+        res.innerText += `\nA média dos valores digitados é ${soma/list.length}`   
+    }
+    
 }
