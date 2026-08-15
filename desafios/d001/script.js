@@ -8,7 +8,7 @@ function adicionar() {
     } else if (txtn.value < 1 || txtn.value > 100) {
         alert('Digite um valor entre 1 e 100!')
     } else {
-        let num = Number(txtn.value)
+        let num = Number.parseInt(txtn.value)
         let n = 0
         while (n < list.length) {
             if (list[n] == num) {
